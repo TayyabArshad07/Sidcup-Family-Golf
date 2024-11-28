@@ -1,0 +1,261 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: white;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.cursor {
+  height: 20px;
+  width: 20px;
+  background-color: #95c11e;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0px 0px 300px 100px #95c11e;
+  transition: all linear 0.1s;
+}
+#Navbar {
+  height: 145px;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 100px;
+}
+#Navbar img {
+  height: 70px;
+}
+#Navbar h4 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 15px;
+}
+video {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  object-fit: cover;
+  z-index: -1;
+}
+.Main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.Page1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 30px;
+}
+.Page1 h1 {
+  font-size: 90px;
+  font-weight: 900;
+  position: relative;
+}
+.Page1 h1::before {
+  content: "EAT. DRINK. PLAY.";
+  position: absolute;
+  z-index: -1;
+  top: -6px;
+  left: -6px;
+  color: black;
+  -webkit-text-stroke: 2px #95c11e;
+}
+.Page1 h2 {
+  font-size: 24px;
+  font-weight: 900;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.Page1 p {
+  font-size: 20px;
+  font-weight: 400;
+  width: 50%;
+}
+.Page2 {
+  min-height: 100vh;
+  width: 100%;
+}
+.Scroller {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  z-index: 10;
+}
+.Scroller::-webkit-scrollbar {
+  display: none;
+}
+.Scroller .Scroller-In {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 30s linear infinite;
+}
+.Scroller .Scroller-In h4 {
+  display: inline-block;
+  text-transform: uppercase;
+  transition: all linear 0.5s;
+  font-size: 80px;
+  color: transparent;
+  font-weight: 900;
+  margin-right: 10px;
+  -webkit-text-stroke: 2px #95c11e;
+}
+.Scroller .Scroller-In h4:hover {
+  color: #95c11e;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.Page2 .About-Us {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 50px 0px;
+}
+.About-Us img {
+  height: 200px;
+  width: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.About-Us .Text-Div {
+  width: 50%;
+  text-align: center;
+}
+.About-Us .Text-Div h3 {
+  font-size: 45px;
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+.About-Us .Text-Div p {
+  font-size: 16px;
+  line-height: 25px;
+}
+.Card-Container {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  margin: 50px 0px;
+}
+.Card {
+  height: 90%;
+  width: 22%;
+  border-radius: 15px;
+  position: relative;
+}
+.Card .Title{
+    position: absolute;
+    bottom: 20px;
+    font-size: 25px;
+    font-weight: 900;
+    white-space: nowrap;
+    text-transform: uppercase;
+    padding: 0px 15px;
+    overflow: hidden;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+.Card:hover .Title{
+    display: none;
+}
+.Card-1 {
+  background: url(./Assests/card1.avif);
+  background-position: center;
+  background-size: cover;
+}
+.Card-2 {
+  background: url(./Assests/card2.webp);
+  background-position: center;
+  background-size: cover;
+}
+.Card-3 {
+  background: url(./Assests/card3.avif);
+  background-position: center;
+  background-size: cover;
+  background-blend-mode:#000;
+}
+.Overlay {
+  background-color: #95c11e;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 20px;
+  border-radius: 15px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+.Overlay h4 {
+  font-size: 25px;
+  font-weight: 900;
+  color: black;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+.Overlay p {
+  font-size: 14px;
+  color: black;
+  font-weight: 500;
+  line-height: 25px;
+}
+.Overlay:hover{
+    opacity: 1;
+
+}
+.Card-Container.rotate .Card {
+    transform: rotate3d(-1,1,0,20deg);
+    transition: all ease 0.5s;
+}
+.Signup-Container{
+  height: 35vh;
+  width: 100%;
+  margin: 50px 0px;
+  overflow: hidden;
+}
+.Signup-Container .Text-Div{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to left bottom,#119f3a,#95c11e);
+}
+.Signup-Container .Text-Div img{
+  height: 100%;
+object-fit: cover;
+width: 10%;
+}
+.Signup-Container .Text-Div h4{
+  font-weight: 900;
+  font-size: 24px;
+  width: 50%;
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+}
